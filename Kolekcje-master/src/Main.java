@@ -108,7 +108,7 @@ public class Main {
 //7. git push -u origin master
 //8. git push
 
-//jak juz masz
+//jak juz masze
 
 // git add .
 // git commit -m "commit"
