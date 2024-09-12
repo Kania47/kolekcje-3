@@ -5,15 +5,15 @@ import java.util.Scanner;
 
 public class gra {
 
-    private ArrayList<Integer> wylosowane;
-    private ArrayList<Integer> wpisane;
-    private LinkedList<Integer> trafione;
+    private static ArrayList<Integer> wylosowane = new ArrayList<>();
+    private ArrayList<Integer> wpisane = new ArrayList<>();
+    private LinkedList<Integer> trafione = new LinkedList<>();
 
     private void wylosujLiczby(int ile) {
-        for (int i = 0; i < ile; i++) {
-            int liczba = (int) (Math.random() * 10 + 1);
+        while(wylosowane.size()<6){
+            int liczba = (int) (Math.random() * 100 + 1);
             while (wylosowane.contains(liczba)) {
-                liczba = (int) (Math.random() * 10 + 1);
+                liczba = (int) (Math.random() * 100 + 1);
             }
             wylosowane.add(liczba);
         }
@@ -32,7 +32,7 @@ public class gra {
     private void wypiszKolekcje(List<Integer> lista){
         System.out.println("Twoja Lista");
         for (int i = 0; i < lista.size(); i++) {
-            System.out.println(lista.get(i));
+            System.out.print(lista.get(i)+ ", ");
 
         }
 
@@ -46,7 +46,7 @@ public class gra {
 
     }
 
-    private void zagraj(){
+    public void zagraj(){
         wylosujLiczby(6);
         wpiszZKlawiatury(6);
         sprawdz();
